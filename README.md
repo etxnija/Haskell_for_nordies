@@ -1,4 +1,4 @@
-Hakell_for_nordies
+Haskell_for_nordies
 ==================
 
-Learning Haskell with frineds
+Learning Haskell with friends
