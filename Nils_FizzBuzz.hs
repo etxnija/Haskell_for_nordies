@@ -6,3 +6,6 @@ fizzBuzz x
 	| otherwise  = show x
 	where 	modthree = (mod x 3 == 0);
 			modfive = (mod x 5 == 0)
+
+fizzBuzzList :: [Int] -> [String]
+fizzBuzzList xs = [fizzBuzz x |x <- xs]
