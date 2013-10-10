@@ -1,3 +1,6 @@
+import Data.Char
+import qualified Data.Map as Map
+
 maximum' :: (Ord a) => [a] -> a
 maximum' [] = error "maxumum of empty list"
 maximum' [x] = x
@@ -37,7 +40,25 @@ largeestDivisable = head (filter p [100000,99999..])
 	where p x = x `mod` 3829 == 0
 
 
-reverse1 :: [a] -> [a]
-reverse1 [] = []
-reverse1 (x:xs) = (reverse1 xs) ++ [x]
- 
+--numLongChains :: Int 
+--numLongChains = length (filter (\ xs -> length xs > 15) (map chain [1.. 100]))
+
+sum' :: (Num a) => [a] -> a
+sum' xs = foldl (\acc x -> acc +x) 0 xs
+
+encode :: Int -> String -> String
+encode offset msg = map (\c -> chr  $ ord c + offset) msg
+
+decode :: Int -> String -> String 
+decode shift msg = encode (negate shift) msg
+
+string2digits :: String -> [Int] 
+string2digits = map digitToInt . filter isDigit
+
+myHash :: Map.Map String (Map.Map String String)
+myHash = Map.fromList $ 
+	[
+		("one", Map.fromList $ [("two", "two")]),
+		("oneTwo", Map.fromList $ [])
+	]
+
