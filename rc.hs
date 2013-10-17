@@ -59,6 +59,7 @@ myHash :: Map.Map String (Map.Map String String)
 myHash = Map.fromList $ 
 	[
 		("one", Map.fromList $ [("two", "two")]),
-		("oneTwo", Map.fromList $ [])
+		("oneTwo", Map.fromList $ []),
+		("oneThree", Map.fromList $ [("three", "three")])
 	]
 
